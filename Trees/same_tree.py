@@ -14,7 +14,7 @@ class Solution:
         def dfs(tree1, tree2):
             if tree1 is None and tree2 is None:
                 return True
-            if tree1 is None or tree2 is None:
+            if (tree1 is None and tree2 is not None) or (tree1 is not None and tree2 is None):
                 return False
             #tree1 and tree2 not empty
             return tree1.val == tree2.val and dfs(tree1.left, tree2.left) and dfs(tree1.right, tree2.right)
