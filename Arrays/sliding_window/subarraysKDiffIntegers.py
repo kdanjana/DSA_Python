@@ -6,7 +6,7 @@ Output: 7
 Explanation: Subarrays formed with exactly 2 different integers: 
 [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2]
 The trick here is to call the helper function f(k) twice: once for k and once for k-1 to find the number of 
-windows with exactly k distinct integers and subtract the number of windows with exactly k-1 distinct integers.
+windows with atmost k distinct integers and subtract the number of windows with atmost k-1 distinct integers.
 The reason behind this is that by finding the difference between these two counts, we effectively calculate 
 the number of new subarrays that have exactly k distinct integers, as any window with k-1 distinct integers 
 cannot contribute to the count of windows with exactly k
