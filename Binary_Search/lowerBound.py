@@ -16,7 +16,7 @@ def lowerBound(arr, x) -> int:
     while low <= high:
         mid = low + ((high - low) // 2)
         if arr[mid] >= x:
-            res = min(res,mid)
+            res = mid
             high = mid - 1
         else:
             low = mid + 1
