@@ -9,9 +9,9 @@ Try to write a solution that runs in log(n) time complexity.
 """
 
 
-def upperBound(arr: [int], x: int, n: int) -> int:
+def upperBound(arr, x):
     # Write your code here.
-    res = n
+    res = len(arr)
     low = 0
     high = len(arr) - 1
     mid = 0
@@ -19,8 +19,13 @@ def upperBound(arr: [int], x: int, n: int) -> int:
         mid = low + ((high-low) // 2)
         if arr[mid] > x:
             res = mid
+            # look for smaller index on the left
             high = mid - 1
         else:
-            low = mid + 1
+            # look on the right
+            low = mid + 1 
                   
     return res
+
+
+print(upperBound([3, 5, 8, 9, 15, 19], 9))   # 4
