@@ -4,8 +4,15 @@ You must return the index of lower bound of 'x'.
 For a sorted array 'arr', 'lower_bound' of a number 'x' is defined as the smallest index 'idx' such 
 that the value 'arr[idx]' >='x'. If all numbers are smaller than 'x', then 'n' should be the 
 'lower_bound' of 'x', where 'n' is the size of array.
-
+another way of asking is ----->
+Problem statement
+You are given a sorted array 'arr' of distinct values and a target value 'm'. You need to search for 
+the index of the target value in the array. If the value is present in the array, return its index.
+If the value is absent, determine the index where it would be inserted in the array while maintaining 
+the sorted order. 
 """
+
+
 
 def lowerBound(arr, x) -> int:
     # Write your code here
