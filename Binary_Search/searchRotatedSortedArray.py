@@ -10,3 +10,27 @@ Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 """
 
+def search(nums, target):
+        low = 0
+        high = len(nums) - 1
+        while low <= high:
+            mid = low + ((high - low) // 2)
+            if nums[mid] == target:
+                return mid
+            #identify which half is sorted
+            if nums[low] <= nums[mid]:# left side is sorted
+                # check if target lies on the left side
+                if nums[low] <= target <= nums[mid]:
+                    # if target lies on left side move to left side
+                    high = mid - 1
+                else:
+                    # else move to right half
+                    low = mid + 1
+            else:# right side is sorted
+                if nums[mid] <= target <= nums[high]: # check if target lies on right side
+                    low = mid + 1
+                else:
+                    high = mid - 1
+        return -1
+    
+print(search([4,5,6,7,0,1,2], 0))  # 4
