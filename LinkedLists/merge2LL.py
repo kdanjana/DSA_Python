@@ -1,8 +1,6 @@
 """ 
-You are given the heads of two sorted linked lists list1 and list2. Merge the two
-lists into one sorted list. The list should be made by splicing together the nodes 
-of the first two lists. Return the head of the merged linked list.
-uses extra Linked list
+Given two sorted linked lists consisting of N and M nodes respectively. 
+The task is to merge both of the list (in-place) and return head of the merged list.
 """
 
 class ListNode:
