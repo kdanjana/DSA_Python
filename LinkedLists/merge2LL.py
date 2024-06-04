@@ -35,7 +35,7 @@ def printLL(node):
     
         
 def mergeTwoLL(head1, head2):
-    #currHead travels over the newly formed linked list, dummy is the head of the newly formed LL
+    #currHead travels over the newly formed linked list, dummyNode is used to point to the head of merged LL
     currHead = dummyNode = ListNode(-1)
     while head1 and head2:
         if head1.val < head2.val:
