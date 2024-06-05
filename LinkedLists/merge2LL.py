@@ -3,26 +3,7 @@ Given two sorted linked lists consisting of N and M nodes respectively.
 The task is to merge both of the list (in-place) and return head of the merged list.
 """
 
-class ListNode:
-    def __init__(self, val, next=None):
-        self.val = val
-        self.next = next
-
-# Definition for singly-linked list.
-class LinkedList:
-    def __init__(self) -> None:
-        self.head = None
-        self.tail = None
-    
-    #creates a new node and appends node to ll
-    def append(self, newVal):
-        newNode = ListNode(newVal)
-        if self.head is None:
-            self.head = newNode
-            self.tail = newNode
-            return
-        self.tail.next = newNode
-        self.tail = newNode
+from LinkedList import Node, Linkedlist
         
 def printLL(node):
     while node:
@@ -34,7 +15,7 @@ def printLL(node):
         
 def mergeTwoLL(head1, head2):
     #currHead travels over the newly formed linked list, dummyNode is used to point to the head of merged LL
-    currHead = dummyNode = ListNode(-1)
+    currHead = dummyNode = Node(-1)
     while head1 and head2:
         if head1.val < head2.val:
             currHead.next = head1
@@ -51,8 +32,8 @@ def mergeTwoLL(head1, head2):
     
 if __name__ == "__main__":
     n,m = map(int, input().strip().split())
-    ll1 = LinkedList()
-    ll2 = LinkedList()
+    ll1 = Linkedlist()
+    ll2 = Linkedlist()
     ll1Nodes = list(map(int,input().strip().split()))
     ll2Nodes = list(map(int,input().strip().split()))
     for x in ll1Nodes:
