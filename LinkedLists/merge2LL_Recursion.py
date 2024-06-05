@@ -14,11 +14,7 @@ If one head is null return the other.
 """
 
 
-
-class Node:
-    def __init__(self, key):
-        self.data = key
-        self.next = None
+from LinkedList import Node
 
 def merge(h1, h2):    
     if h1 is None and h2 is not None:
@@ -26,7 +22,7 @@ def merge(h1, h2):
     if h1 is not None and h2 is None:
         return h1
 
-    if h1.data <= h2.data:
+    if h1.val <= h2.val:
         h1.next = merge(h1.next, h2)
         return h1
     else:
@@ -36,7 +32,7 @@ def merge(h1, h2):
 
 def printList(node):
     while node:
-        print(node.data, end=" ")
+        print(node.val, end=" ")
         node = node.next
 
 head1 = Node(1)
