@@ -1,12 +1,11 @@
-class Node:
-    def __init__(self, key):
-        self.data = key
-        self.next = None
+from LinkedList import Node
+
+
 
 def merge(head1, head2):    
     currHead = dummyNode = Node(-1)
     while head1 and head2:
-        if head1.data <= head2.data:
+        if head1.val <= head2.val:
             currHead.next = head1
             head1 = head1.next 
         else:
@@ -22,7 +21,7 @@ def merge(head1, head2):
 
 def printList(node):
     while node:
-        print(node.data, end=" ")
+        print(node.val, end=" ")
         node = node.next
 
 head1 = Node(1)
