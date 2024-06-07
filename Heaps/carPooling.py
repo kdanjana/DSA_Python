@@ -12,7 +12,7 @@ from, and to. These respectively represent the number of passengers for that tri
 the passengers will be picked up, and the kilometer mark where they will be dropped off. Our task is to 
 determine if the car can successfully complete all the given trips without ever exceeding its seating capacity.
 Imagine a timeline where each point is a kilometer mark where some action takes place—a pick-up or a drop-off.
-
+TC-O(nlogn)
 """
 
 import heapq
