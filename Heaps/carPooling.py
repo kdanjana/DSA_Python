@@ -26,8 +26,9 @@ def carPooling(trips,capacity):
         heapq.heappush(minHeap, (drop, -passengers))
     #number of passengers at any given moment
     numPassengers = 0
-    for passengers, pickup, drop in trips:
-        numPassengers += heapq.heappop(minHeap)[1]
+    while minHeap:
+        trip = heapq.heappop(minHeap)
+        numPassengers += trip[1]
         if numPassengers > capacity:
             return False
     return True
