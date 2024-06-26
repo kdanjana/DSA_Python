@@ -19,15 +19,15 @@ class MyCalendar:
 
     def book(self, start: int, end: int) -> bool:
         l = 0
-        r = len(self.calender)
+        r = len(self.calender) - 1
         #using BS we are trying to find the index(l) at which we can insert the
         #(start,end) in the self.calender
-        while l < r:
+        while l <= r:
             mid = l + ((r-l)//2)
-            if self.calender[mid][0] <= start:
+            if self.calender[mid][0] < start:
                 l = mid + 1
             else:
-                r = mid 
+                r = mid - 1
         #once we find the index(l) at which we can insert new event, we check if events
         # intersect if we insert the event at that index(l)
         if self.intersects(l,start,end):
@@ -43,6 +43,47 @@ class MyCalendar:
         
 
 
+# from collections import Counter
+
+# class MyCalendar:
+#     def __init__(self):
+#         self.calender = Counter()
+
+#     def book(self, start: int, end: int) -> bool:
+#         self.calender[start] += 1
+#         self.calender[end] -= 1
+
+#         intersections = 0
+#         for boundary in sorted(self.calender):
+#             intersections += self.calender[boundary]
+#             if intersections > 1:
+#                 # Revert the updates
+#                 self.calender[start] -= 1
+#                 self.calender[end] += 1
+#                 return False
+#         return True
+ 
+
+# from sortedcontainers import SortedDict
+
+# class MyCalendar:
+#     def __init__(self):
+#         self.sd = SortedDict() # cannot be dict like self.sd={}
+
+#     def book(self, start: int, end: int) -> bool:
+#         self.sd[start] = self.sd.get(start, 0) + 1
+#         self.sd[end] = self.sd.get(end, 0) - 1
+#         s = 0
+#         for v in self.sd.values():
+#             s += v
+#             if s > 1:
+#                 self.sd[start] -= 1
+#                 self.sd[end] += 1
+#                 return False
+#         return True
+ 
+ 
+ 
 # my approach
 # class MyCalendar:
 
